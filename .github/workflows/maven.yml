@@ -1,11 +1,9 @@
 name: Java CI with Maven
-
 on:
   push:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -22,5 +20,5 @@ jobs:
           cache: maven
 
       - name: Build with Maven
-        working-directory: lab2-copy
+        working-directory: lab2-copy   # <--- add this
         run: mvn -B clean install
