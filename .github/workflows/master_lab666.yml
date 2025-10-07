@@ -24,8 +24,10 @@ jobs:
           java-version: '21'
           distribution: 'microsoft'
 
-      - name: Build with Maven
+        - name: Build with Maven
+        working-directory: lab2-copy
         run: mvn clean install
+        
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
@@ -60,4 +62,5 @@ jobs:
           app-name: 'Lab666'
           slot-name: 'Production'
           package: '*.jar'
+
           
